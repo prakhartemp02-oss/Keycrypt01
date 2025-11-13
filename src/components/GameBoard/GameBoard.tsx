@@ -1,6 +1,6 @@
 /** Main game board component */
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { GameGrid } from './GameGrid';
 import { useGameState } from '../../hooks/useGameState';
