@@ -285,14 +285,18 @@ export default function GamePage() {
         {/* Side Panel - Hints */}
         <div className="lg:w-80 lg:bg-white lg:dark:bg-gray-800 lg:border-l lg:border-gray-200 lg:dark:border-gray-700 p-4 lg:p-6">
           {/* Hint Panel */}
-          <HintPanel
-            hints={gameState.unlocked_hints}
-            cipherInfo={gameState.cipher_info}
-            level={gameState.level}
-            attemptsUsed={gameState.attempts_allowed - gameState.attempts_remaining}
-            totalAttempts={gameState.attempts_allowed}
-            isLoading={isLoadingHints}
-          />
+          <div className="lg:sticky lg:top-4">
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
+              <span>💡</span>
+              Hints & Clues
+            </h3>
+
+            <HintPanel
+              gameState={gameState}
+              unlockedHints={hintsData?.unlocked || {}}
+              isVisible={true}
+            />
+          </div>
         </div>
       </div>
 
